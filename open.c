@@ -1,6 +1,6 @@
 #include "monty.h"
 
-void push(char *str)
+void _push(char *str)
 {
 char string[600];
 if ( strlen(str) == strlen( sprintf(string ,atoi(str)) ) ) {
@@ -34,20 +34,13 @@ int main(int argc, char **argv)
 	};
 	while ( getline(&str, &len, fp) != -1)
 	{
+
 	line_num++;
 	p1 = strtok(str," ");
 	p2 = strtok(NULL," ");
-	if (!strcmp(p1,"push"))
-	{
-	push(p2);
-	}
-	else if(!strcmp(p1, "pall"))
-	{
-	/*	pall(p2); */
-	}
+	get_opcodes(p1)(atoi(p1));
 	}
 	free(str);	
 	fclose(fp);
     return 0;
 }
-

@@ -35,4 +35,22 @@ typedef struct instruction_s
         char *opcode;
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+
+void _push(int a);
+void _pall(int a);
+void _pint(int a);
+void _pop(int a);
+void _swap(int a);
+void _queue(int a);
+void _stack(int a);
+void _add(int a);
+void _nop(int a);
+void _sub(int a);
+void _mul(int a);
+void _div(int a);
+void _mod(int a);
+void _pchar(int a);
+void _pstr(int a);
+void _rotl(int a);
+void _rotr(int a);
 #endif
