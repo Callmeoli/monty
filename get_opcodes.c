@@ -1,14 +1,15 @@
 #include "monty.h"
+
 /**
-* get_opcodes - select the correct opcode to perform
-*
-* @opc: opcode passed
-*
-* Return: ponter to the function thar execute
-*/
+ * get_opcodes - selects the correct opcode to perform
+ *
+ * @opc: opcode passed
+ *
+ * Return: pointer to the function that executes the opcode
+ */
 void (*get_opcodes(char *opc))(stack_t **stack, unsigned int line_number)
 {
-instruction_t instruct[] = {
+	instruction_t instruct[] = {
 		{"push", _push},
 		{"pall", _pall},
 		{"pint", _pint},
@@ -32,8 +33,9 @@ instruction_t instruct[] = {
 
 	for (i = 0; instruct[i].opcode; i++)
 	{
-		if (strcmp(instruct[i].opcode, opc) == 0)
+		if (_strcmp(instruct[i].opcode, opc) == 0)
 			break;
 	}
-	return (instruct[i].f);		
+
+	return (instruct[i].f);
 }
